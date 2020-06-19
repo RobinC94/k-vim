@@ -145,6 +145,7 @@ Plug 'tomasr/molokai'
 " nav
 " nerdtree nerdtreetabs
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " ctrlspace
 Plug 'vim-ctrlspace/vim-ctrlspace'
 " tagbar
@@ -289,6 +290,8 @@ endif
 
 " Add plugins to &runtimepath
 call plug#end()
+
+
 
 
 " ################### 基础 ######################
@@ -751,8 +754,21 @@ endif
     " let g:nerdtree_tabs_synchronize_focus=0
     " 是否自动开启nerdtree
     " thank to @ListenerRi, see https://github.com/wklken/k-vim/issues/165
-    let g:nerdtree_tabs_open_on_console_startup=0
-    let g:nerdtree_tabs_open_on_gui_startup=0
+    let g:nerdtree_tabs_open_on_console_startup=1
+    let g:nerdtree_tabs_open_on_gui_startup=1
+
+    let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 " }}}
 
 
@@ -829,7 +845,7 @@ endif
 
     let g:quickrun_no_default_key_mappings = 1
     nmap <Leader>r <Plug>(quickrun)
-    map <F10> :QuickRun<CR>
+    map <F5> :QuickRun<CR>
 " }}}
 
 

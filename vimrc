@@ -99,7 +99,7 @@ set cursorline
 
 " 设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制, 不需要可以去掉
 " 好处：误删什么的，如果以前屏幕打开，可以找回
-set t_ti= t_te=
+" set t_ti= t_te=
 
 
 " 鼠标暂不启用, 键盘党....
@@ -228,20 +228,20 @@ set ttyfast
 set nrformats=
 
 " 相对行号: 行号变成相对，可以用 nj/nk 进行跳转
-set relativenumber number
-au FocusLost * :set norelativenumber number
-au FocusGained * :set relativenumber
+"set relativenumber number
+"au FocusLost * :set norelativenumber number
+"au FocusGained * :set relativenumber
 " 插入模式下用绝对行号, 普通模式下用相对
-autocmd InsertEnter * :set norelativenumber number
-autocmd InsertLeave * :set relativenumber
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber number
-  else
-    set relativenumber
-  endif
-endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+"autocmd InsertEnter * :set norelativenumber number
+"autocmd InsertLeave * :set relativenumber
+"function! NumberToggle()
+"  if(&relativenumber == 1)
+"    set norelativenumber number
+"  else
+"    set relativenumber
+"  endif
+"endfunc
+"nnoremap <C-n> :call NumberToggle()<cr>
 
 " 防止tmux下vim的背景色显示异常
 " Refer: http://sunaku.github.io/vim-256color-bce.html
@@ -260,7 +260,7 @@ set encoding=utf-8
 " 自动判断编码时，依次尝试以下编码：
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set helplang=cn
-"set langmenu=zh_CN.UTF-8
+"set langmenu=zh_CN.UTF-8
 "set enc=2byte-gb18030
 " 下面这句只影响普通模式 (非图形界面) 下的 Vim
 set termencoding=utf-8
@@ -365,15 +365,15 @@ nnoremap <F4> :set wrap! wrap?<CR>
 " F6 语法开关，关闭语法可以加快大文件的展示
 nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
-set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
+set pastetoggle=<F10>            "    when in insert mode, press <F10> to go to
                                 "    paste mode, where you can paste mass data
                                 "    that won't be autoindented
 
 " disbale paste mode when leaving insert mode
 au InsertLeave * set nopaste
 
-" F5 set paste问题已解决, 粘贴代码前不需要按F5了
-" F5 粘贴模式paste_mode开关,用于有格式的代码粘贴
+" F10 set paste问题已解决, 粘贴代码前不需要按F10了
+" F10 粘贴模式paste_mode开关,用于有格式的代码粘贴
 " Automatically set paste mode in Vim when pasting in insert mode
 function! XTermPasteBegin()
   set pastetoggle=<Esc>[201~
@@ -657,8 +657,8 @@ endif
 set background=dark
 set t_Co=256
 
-colorscheme solarized
-" colorscheme molokai
+"colorscheme solarized
+colorscheme molokai
 
 
 " 设置标记一列的背景颜色和数字一行颜色一致
